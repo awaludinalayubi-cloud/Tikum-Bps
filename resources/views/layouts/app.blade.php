@@ -234,9 +234,34 @@
             margin-left: 14px !important;
         }
 
+        /* Buat sidebar jadi kolom penuh setinggi layar */
+        .sidebar-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .sidebar-wrapper .sidebar-menu {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-wrapper .sidebar-menu > ul {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Dorong Help Desk ke dasar */
+        .sidebar-item-bottom {
+            margin-top: auto;
+            margin-bottom: 1rem;
+        }
+
         /* =========================================
-   LOGO
-========================================= */
+            LOGO
+            ========================================= */
 
         .sidebar-header .logo {
             width: 100% !important;
@@ -825,14 +850,13 @@
                             </a>
                         </li>
 
-                         {{-- HELP DESK --}}
-                        <li class="">
-                            <a href="{{ route('helpdesk') }}" target="_blank" rel="noopener noreferrer" class="sidebar-link">
-                                <i class="bi bi-question-circle-fill"></i>
+                        {{-- HELP DESK --}}
+                        <li class="sidebar-item sidebar-item-bottom">
+                            <a href="{{ route('helpdesk') }}" class="sidebar-link" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-headset"></i>
                                 <span>Help Desk</span>
                             </a>
                         </li>
-
                     </ul>
                 </div>
 

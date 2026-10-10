@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\PenilaianTahap1Controller;
 use App\Http\Controllers\Admin\SipeterPertanyaanController;
 use App\Http\Controllers\Admin\PenilaianTahap2PanitiaController;
 use App\Http\Controllers\Admin\AngkaKreditController;
+use App\Http\Controllers\HelpDeskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -346,9 +347,7 @@ Route::prefix('sipeter-surat-keputusan/hasil')
 // =========================================================
 // HELP DESK
 // =========================================================
-Route::get('/helpdesk', function () {
-    return view('helpdesk.index');
-})->name('helpdesk');
+Route::get('/helpdesk', [HelpDeskController::class, 'index'])->name('helpdesk');
 
 // =========================================================
 // LOGIN
